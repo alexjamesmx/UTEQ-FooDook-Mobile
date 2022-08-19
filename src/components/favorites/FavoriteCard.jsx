@@ -14,8 +14,6 @@ export default function RestaurantCard(props) {
   const { finalRefresh, setFinalRefresh } = useUser(finalRefresh);
 
   const goToRestaurant = () => {
-    // setComeFrom(true)
-    console.log('amos');
     navigation.navigate('FavoriteRestaurantScreen', {
       id: restaurant.id,
       name: restaurant.name,

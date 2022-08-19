@@ -157,8 +157,6 @@ export default function UserInfo(props) {
               />
             }
             onChangeText={(text) => {
-              console.log('text', text);
-              console.log('phone', phoneValue);
               setPhoneValue(text);
               formik.setFieldValue('phone', text);
             }}

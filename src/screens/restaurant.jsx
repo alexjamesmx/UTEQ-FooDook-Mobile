@@ -12,9 +12,7 @@ export default function RestaurantNavigation(props) {
   const { navigation, route } = props;
   const [refreshing, setRefreshing] = useState(false);
   const [menu, setMenu] = useState([]);
-  console.log(menu);
-  // console.log(route, 'NAVIGATION,', navigation.getParent());
-
+  console.log(route.params);
   useEffect(() => {
     navigation.setOptions({
       title: route.params.name,

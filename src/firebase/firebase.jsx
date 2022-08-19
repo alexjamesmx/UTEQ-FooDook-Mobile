@@ -38,7 +38,6 @@ export const initFirebase = initializeApp(firebaseConfig);
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 
-// console.log('FIREBASE AUTH', auth)
 const db = getFirestore(app);
 
 export async function registerNewUser(user) {
@@ -170,12 +169,8 @@ export async function getAllFavorites(uid) {
 
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc, i) => {
-    // console.log(i)
-    // console.log(doc.data())
     arrayFavorites = doc.data().favoriteRestaurants;
   });
-
-  console.log(arrayFavorites);
 
   // Inner join id restuarante con arreglo de favoritos
   // array

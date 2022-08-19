@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { appcolor } from '../constants/appcolor';
 import { useNavigation } from '@react-navigation/native';
 const Stack = createStackNavigator();
-import MapScreen from '../screens/map';
+import MapScreen from '../components/map/MapCard';
 
 export default function RestaurantNavigation(props) {
   const navigation = useNavigation();

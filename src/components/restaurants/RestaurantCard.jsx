@@ -19,7 +19,6 @@ export default function RestaurantCard(props) {
   const { finalUser } = useUser(finalUser);
   const [exists, setExists] = useState(false);
   const { finalRefresh, setFinalRefresh } = useUser(finalRefresh);
-  console.log(restaurant);
   const goToRestaurant = () => {
     navigation.navigate('RestaurantScreen', {
       id: restaurant.id,
@@ -28,7 +27,12 @@ export default function RestaurantCard(props) {
   };
 
   const goToMap = () => {
-    navigation.navigate('MapScreen', { id: restaurant.id });
+    console.log(restaurant.lat);
+    navigation.navigate('MapScreen', {
+      id: restaurant.id,
+      lat: restaurant.lat,
+      long: restaurant.long,
+    });
   };
 
   const handleFavorites = async () => {
@@ -46,7 +50,6 @@ export default function RestaurantCard(props) {
   };
 
   useEffect(() => {
-    console.log('quitando corazon');
     (async () => {
       const res = await getFavorites(restaurant.id, finalUser.uid);
       if (res) {
